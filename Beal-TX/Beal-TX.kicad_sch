@@ -1,0 +1,158 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "5ecf7ddf-d623-4591-9f28-acf618ce627e")
+	(paper "A4")
+	(title_block
+		(rev "v0.1")
+		(company "Gordios")
+		(comment 1 "meeed.fr")
+		(comment 2 "baylibre.com")
+	)
+	(lib_symbols)
+	(sheet
+		(at 55.88 30.48)
+		(size 53.34 32.385)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "16410f5b-8ec8-4204-bf81-48a6840832db")
+		(property "Sheetname" "I/O Ext Board Output"
+			(at 55.88 29.7684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "input.kicad_sch"
+			(at 55.88 63.4496 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Beal-TX"
+				(path "/5ecf7ddf-d623-4591-9f28-acf618ce627e"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 58.42 108.585)
+		(size 54.61 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "63bc2df9-afc1-4a7a-a5d1-e51d49dff082")
+		(property "Sheetname" "Radio_MCU"
+			(at 58.42 107.8734 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "radio_mcu.kicad_sch"
+			(at 58.42 130.7596 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Beal-TX"
+				(path "/5ecf7ddf-d623-4591-9f28-acf618ce627e"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 57.785 71.755)
+		(size 53.34 22.225)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "bfb3e4c0-8b5a-488b-953e-cdc1d642e0ca")
+		(property "Sheetname" "Power"
+			(at 57.785 71.0434 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 57.785 94.5646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Beal-TX"
+				(path "/5ecf7ddf-d623-4591-9f28-acf618ce627e"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
