@@ -1,0 +1,8 @@
+title: Beal
+description: LoRa valve-control proxy for irrigation controllers
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

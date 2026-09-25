@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | default: site.title }}</title>
+<style>
+  body {
+    max-width: 860px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #24292f;
+  }
+  pre, code { background: #f6f8fa; }
+  pre { padding: 1rem; overflow-x: auto; border-radius: 6px; }
+  code { padding: 0.15em 0.3em; border-radius: 4px; }
+  pre code { padding: 0; background: none; }
+  table { border-collapse: collapse; }
+  th, td { border: 1px solid #d0d7de; padding: 0.4rem 0.8rem; }
+  .mermaid { background: none; }
+</style>
+</head>
+<body>
+{{ content }}
+
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+  document.querySelectorAll("pre > code.language-mermaid").forEach((code) => {
+    const div = document.createElement("div");
+    div.className = "mermaid";
+    div.textContent = code.textContent;
+    code.parentElement.replaceWith(div);
+  });
+
+  mermaid.initialize({ startOnLoad: true });
+</script>
+</body>
+</html>
