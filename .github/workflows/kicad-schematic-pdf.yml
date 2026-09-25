@@ -1,4 +1,4 @@
-name: KiCad schematic PDF
+name: KiCad schematic exports
 
 on:
   push:
@@ -37,9 +37,15 @@ jobs:
           schematic_file_name: ./${{ matrix.dir }}/${{ matrix.name }}.kicad_sch
           schematic_output_pdf: true
           schematic_output_pdf_file_name: ${{ matrix.name }}-schematic.pdf
+          schematic_output_bom: true
+          schematic_output_bom_file_name: ${{ matrix.name }}-bom.csv
+          schematic_output_bom_fields: "Reference,Value,MPN,Footprint,${QUANTITY},${DNP}"
+          schematic_output_bom_labels: "Refs,Value,MPN,Footprint,Qty,DNP"
 
-      - name: Upload schematic PDF
+      - name: Upload outputs
         uses: actions/upload-artifact@v7
         with:
-          name: ${{ matrix.name }}-schematic-pdf
-          path: ${{ matrix.name }}-schematic.pdf
+          name: ${{ matrix.name }}-outputs
+          path: |
+            ${{ matrix.name }}-schematic.pdf
+            ${{ matrix.name }}-bom.csv
