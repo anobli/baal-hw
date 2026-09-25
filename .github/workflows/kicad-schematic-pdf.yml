@@ -1,0 +1,45 @@
+name: KiCad schematic PDF
+
+on:
+  push:
+    paths:
+      - "Beal-Rx/**"
+      - "Beal-TX/**"
+      - "Beal-Common/**"
+      - ".github/workflows/kicad-schematic-pdf.yml"
+  pull_request:
+    paths:
+      - "Beal-Rx/**"
+      - "Beal-TX/**"
+      - "Beal-Common/**"
+      - ".github/workflows/kicad-schematic-pdf.yml"
+  workflow_dispatch:
+
+jobs:
+  schematic-pdf:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Beal-RX
+            dir: Beal-Rx
+          - name: Beal-TX
+            dir: Beal-TX
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Run KiCad actions
+        uses: actions-for-kicad/kicad-actions@v2-k10.0
+        with:
+          project_file_name: ./${{ matrix.dir }}/${{ matrix.name }}.kicad_pro
+          schematic_file_name: ./${{ matrix.dir }}/${{ matrix.name }}.kicad_sch
+          schematic_output_pdf: true
+          schematic_output_pdf_file_name: ${{ matrix.name }}-schematic.pdf
+
+      - name: Upload schematic PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.name }}-schematic-pdf
+          path: ${{ matrix.name }}-schematic.pdf
